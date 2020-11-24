@@ -1,13 +1,13 @@
 from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
-from linebot.models import(MessageEvent,TextMessage,TextSendMessage)
+from linebot.models import(MessageEvent,TextMessage,TextSendMessage,)
 
 app = Flask(__name__)
 # Channel Access Token
-line_bot_api = LineBotApi('s5YBNSSGg3DnkfM6Vtl+wBCrFOqMEHIK+hfDpyuFcmVxsDnc/1J0r0IS+PkFsGAqInOXfanhP15huw4ILSofFSZZSEsKZFSlTQngNsbkVH41F6dbf0qK8nzlDPucrT4NOeu7zFuLgN3MES1EYqFMlAdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('JnmSUgVjnr6qaksfmnefZAGdACh2AEic36jiP9aVlsZ7eCpvW0VMwHTQnBgS8K/uInOXfanhP15huw4ILSofFSZZSEsKZFSlTQngNsbkVH4vHmUpRMpFxHfLxgABLtWTGFoN7sT2kfxt6uqpt2jEJAdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('ce1688bf709d921435209419534a18e7')
+handler = WebhookHandler('0c8d8fea192c7149abcd008868a54c3d')
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -25,9 +25,5 @@ def callback():
         abort(400)
     return 'OK'
 
-
-
-
-import os
 if __name__ == "__main__":
-    app.run
+    app.run()
